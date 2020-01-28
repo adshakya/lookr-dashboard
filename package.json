@@ -1,0 +1,40 @@
+{
+  "name": "lookr_dashboard",
+  "version": "0.1.0",
+  "private": true,
+    "main": "index.js",
+  "dependencies": {
+    "@coreui/coreui": "^2.1.12",
+    "@coreui/react": "^2.5.2",
+    "chart.js": "^2.8.0",
+    "coreui": "^0.4.2-alpha2",
+    "mdbreact": "^4.19.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-scripts": "3.0.1",
+    "watchman": "^1.0.0"
+  },
+  "homepage": ".",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "cp ./src/config.js ./src/config.bak.js && cp ./src/config-prod.js ./src/config.js && react-scripts build && mv ./src/config.bak.js ./src/config.js",
+    "deploy":"aws s3 cp --recursive ./build s3://adshakya.com",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
